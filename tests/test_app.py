@@ -36,4 +36,14 @@ def test_add_large_numbers():
 def test_is_even(value, expected):
     assert is_even(value) == expected
 
+@pytest.mark.parametrize("a, b, expected", [
+    (1, -1, 0),
+    (100, -50, 50),
+    (7, 3, 10),
+    (-10, -5, -15),
+])
+
+def test_add_parametrized(a, b, expected):
+    assert add(a, b) == expected
+
 #pytest -q
