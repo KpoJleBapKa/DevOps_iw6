@@ -19,6 +19,10 @@ def test_add():
     assert add(0, 0) == 0
     assert add(-5, 3) == -2
 
+def test_add_large_numbers():
+    assert add(1_000_000, 2_000_000) == 3_000_000
+    assert add(-1_000_000, 500_000) == -500_000
+
 @pytest.mark.parametrize("value, expected", [
     (0, True),
     (2, True),
@@ -28,5 +32,8 @@ def test_add():
     (100, True),
     (101, False)
 ])
+
 def test_is_even(value, expected):
     assert is_even(value) == expected
+
+#pytest -q
