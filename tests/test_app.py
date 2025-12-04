@@ -10,6 +10,9 @@ from app import add, is_even
 def sample_numbers():
     return [0, 2, 4, 6, 8, 10, -2, -4]
 
+def test_is_even_large_odd():
+    assert is_even(99999999) is False
+
 def test_all_even(sample_numbers):
     for n in sample_numbers:
         assert is_even(n) is True
